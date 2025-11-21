@@ -1,8 +1,81 @@
 body {
-  background-color: lightblue;
-}
-h1 {
-  color: navy;
-  margin-left: 20px;
-}
- 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+            background-color: #eef2f3; /* Light gray-blue background */
+            margin: 0;
+            padding: 20px;
+            color: #333; /* Dark gray text is easier to read than black */
+        }
+
+        /* 2. CLASS SELECTOR: The main card container */
+        .main-container {
+            background-color: white;
+            width: 90%; /* Responsive width */
+            max-width: 800px; /* Stops it from getting too wide on big screens */
+            margin: 0 auto; /* Centers the container horizontally */
+            padding: 40px;
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Soft drop shadow */
+            text-align: center; /* Centers text inside */
+        }
+
+        /* 3. CLASS SELECTOR: Circular Profile Picture */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            object-fit: cover; /* Ensures image doesn't stretch */
+            border-radius: 50%; /* Makes the image a perfect circle */
+            border: 5px solid #4a90e2; /* Nice blue border matching the theme */
+            margin-bottom: 15px;
+        }
+
+        /* 4. ELEMENT SELECTORS: Headings */
+        h1 {
+            color: #2c3e50;
+            margin-top: 0;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #4a90e2; /* Blue color for section titles */
+            border-bottom: 2px solid #eee; /* Subtle line under titles */
+            padding-bottom: 10px;
+            margin-top: 30px;
+            text-transform: uppercase; /* Makes text all caps */
+            font-size: 1.2em;
+            letter-spacing: 1px;
+        }
+
+        /* 5. CLASS SELECTOR: Specific style for info sections */
+        .info-section p {
+            font-size: 1.1em;
+            line-height: 1.6; /* Improves readability */
+        }
+
+        /* 6. DESCENDANT SELECTOR: Styling lists inside info-section */
+        .info-section ul {
+            list-style-type: none; /* Removes default bullet points */
+            padding: 0;
+        }
+
+        .info-section li {
+            background-color: #f9f9f9;
+            margin: 5px auto;
+            padding: 10px;
+            border-radius: 5px;
+            width: 80%; /* Width of the list items */
+        }
+
+        /* 7. CLASS SELECTOR: Gallery Image styling */
+        .gallery-img {
+            max-width: 100%; /* Makes image responsive (fits screen) */
+            height: auto;
+            border-radius: 10px;
+            margin-top: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s; /* Animation effect */
+        }
+
+        /* PSEUDO-CLASS SELECTOR: Hover effect on gallery image */
+        .gallery-img:hover {
+            transform: scale(1.02); /* Slightly grows when hovered */
+        }
