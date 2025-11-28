@@ -1,14 +1,120 @@
-.container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  background-color: dodgerblue;
-  padding: 5px;
-  gap: 5px;
+/* 1. CSS GRID ON BODY: The modern way to center everything */
+body {
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   background-color: #dbe4eb;
+   margin: 0;
+   min-height: 100vh;
+   /* GRID MAGIC TASK 03 */
+   display: grid;           /* Turns body into a Grid container */
+   place-items: center;     /* Instantly centers content vertically & horizontally */
 }
-.container div {
-  background-color: #f1f1f1;
-  color: #000;
-  padding: 10px;
-  font-size: 30px;
-  text-align: center;
+.main-container {
+   background-color: white;
+   width: 90%;
+   max-width: 900px; /* Made slightly wider to fit the grid columns */
+   padding: 40px;
+   border-radius: 15px;
+   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+   border-top: 10px solid #4a90e2;
+}
+/* 2. HEADER (Kept Flexbox because it's best for alignment) */
+header {
+   display: flex;
+   align-items: center;
+   gap: 30px;
+   border-bottom: 3px solid #eee;
+   padding-bottom: 25px;
+   margin-bottom: 25px;
+}
+.profile-pic {
+   width: 150px;
+   height: 150px;
+   object-fit: cover;
+   border-radius: 50%;
+   border: 6px solid #4a90e2;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+   flex-shrink: 0;
+}
+.header-text h1 {
+   color: #2c3e50;
+   margin: 0 0 10px 0;
+   font-size: 2.5em;
+   font-weight: 800;
+}
+.header-text p {
+   margin: 0;
+   color: #555;
+   font-size: 1.1em;
+   font-weight: 500;
+}
+/* 3. CSS GRID FOR SECTIONS - This is the main part of Task 03 */
+.grid-layout {
+   display: grid;
+   /* This creates 2 equal columns */
+   grid-template-columns: 1fr 1fr;
+   /* This adds space between the grid cells */
+   gap: 20px;
+}
+/* Special class to make the Education section span across both columns */
+.full-width {
+   grid-column: 1 / -1; /* Start at line 1, end at the last line */
+}
+/* 4. LIST STYLING (Kept the high visibility look) */
+ul {
+   padding: 0;
+   margin: 0;
+   display: flex;
+   flex-direction: column;
+   gap: 15px;
+}
+li {
+   list-style: none;
+   background-color: #f0f7ff;
+   padding: 15px;
+   border-radius: 8px;
+   border: 1px solid #cce0f5;
+   border-left: 8px solid #2980b9;
+   color: #333;
+   font-weight: 600;
+}
+
+li:hover {
+    background-color: #e1efff;
+    transform: translateX(5px);
+    transition: 0.2s ease;
+}
+
+h2 {
+    color: #2c3e50;
+    background-color: #eee;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    margin-top: 0;
+    text-align: center;
+}
+
+.gallery-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    padding: 10px;
+    background-color: #eee;
+    border-radius: 10px;
+}
+
+.gallery-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1)
+}
+
+@media (min-width: 700px) {
+    .grid-layout {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 }
