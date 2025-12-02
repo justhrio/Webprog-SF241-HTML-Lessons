@@ -5,92 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Profile - Xander Revelar</title>
     
-    <!-- LOAD BOOTSTRAP 5 CSS -->
+    <!-- LOAD BOOTSTRAP 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <style>
-        /* Optional: Small custom tweak for the profile picture size */
-        .profile-pic {
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-        }
-    </style>
 </head>
 <body class="bg-light">
 
-    <!-- MAIN CONTAINER (Centers content) -->
-    <div class="container py-5">
-        
-        <!-- CARD (The white box with shadow) -->
-        <div class="card shadow-lg mx-auto" style="max-width: 800px;">
-            <div class="card-body p-4 p-md-5">
-
-                <!-- 1. HEADER SECTION -->
-                <header class="text-center mb-5">
-                    <img src="https://scontent.fmnl25-7.fna.fbcdn.net/v/t39.30808-6/506404868_2707300646135528_8803857674137605405_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=6JB6GMXfxiAQ7kNvwGtBIiN&_nc_oc=AdnuU5utZ83CInkXs7Kt0Uv2UJaemz0u-xU0kYVulBYfmLFLdPFYXUftr1Pd1nY-yUU&_nc_zt=23&_nc_ht=scontent.fmnl25-7.fna&_nc_gid=HQqy0jM71llrC0XNuyUjZQ&oh=00_Afi4yl4hknPba_8YSe6mOobMKN1Vr-qdQ8RwiVOt9FjxjA&oe=692B1877" 
-                         alt="Xander Profile" 
-                         class="profile-pic rounded-circle img-thumbnail mb-3 border-primary">
-                    
-                    <h1 class="fw-bold text-dark">Xander Revelar</h1>
-                    <p class="lead mb-1 text-secondary">Bachelor of Science in Computer Science</p>
-                    <p class="text-muted fst-italic">Specialization in Cyber Security and Forensics</p>
-                </header>
-
-                <hr class="my-4">
-
-                <!-- 2. INFO SECTION -->
-                <div class="info-section">
-                    
-                    <!-- About Me -->
-                    <div class="mb-4">
-                        <h2 class="h4 text-primary fw-bold border-bottom pb-2">About Me</h2>
-                        <p>I'm on the walk. Living a faithful life.</p>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><strong>Age:</strong> 20 years old</li>
-                            <li class="list-group-item"><strong>Email:</strong> xsrevelar@student.apc.edu.ph</li>
-                        </ul>
-                    </div>
-
-                    <!-- Education -->
-                    <div class="mb-4">
-                        <h2 class="h4 text-primary fw-bold border-bottom pb-2">Education & Achievements</h2>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item">App development last PURPCOM</li>
-                            <li class="list-group-item">Cyber Security Enthusiast</li>
-                            <li class="list-group-item">Graduated with Honors in highschool / With Honors last 1st year College</li>
-                        </ul>
-                    </div>
-
-                    <!-- Hobbies -->
-                    <div class="mb-4">
-                        <h2 class="h4 text-primary fw-bold border-bottom pb-2">Hobbies & Interests</h2>
-                        <div class="p-3 bg-light rounded border">
-                            <p class="mb-0">Covering songs, playing guitars, preaching the Lord's word.</p>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- 3. GALLERY SECTION -->
-                <div class="gallery-section mt-5 text-center">
-                    <h2 class="h4 text-primary fw-bold mb-4">Picture Gallery</h2>
-                    <img src="https://imageio.forbes.com/specials-images/imageserve/68f10e3830760aaae7d070f5/The-White-Rabbit-from-Alice-in-Wonderland--a-digital-painting-by-Luz-Tapia/0x0.jpg?format=jpg&crop=1179,786,x0,y385,safe&width=960" 
-                         alt="White Rabbit" 
-                         class="img-fluid rounded shadow-sm border p-1">
-                </div>
-
-            </div>
-        </div>
-        
-        <!-- Footer -->
-        <div class="text-center mt-4 text-muted smalls">
-            <p>Created with Bootstrap 5</p>
-        </div>
-
+    <!-- 1. HEADER (Purple) -->
+    <div class="container-fluid text-white text-center py-4 mb-3" style="background-color: #800080;">
+        <h1 class="fw-bold m-0">Personal Profile Web Page - Xander Revelar</h1>
     </div>
 
-    <!-- BOOTSTRAP JS (Optional, makes things like dropdowns work if you add them later) -->
+    <div class="container-fluid px-4">
+        <div class="row g-3">
+            
+            <!-- 2. LEFT COLUMN: MENU (Blue) -->
+            <div class="col-md-3 col-lg-2">
+                <div class="list-group text-center">
+                    <a href="#" class="list-group-item list-group-item-action text-white mb-2 border-0" style="background-color: #00bcd4;">About Me</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white mb-2 border-0" style="background-color: #00bcd4;">Education</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white mb-2 border-0" style="background-color: #00bcd4;">IT Experience</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white mb-2 border-0" style="background-color: #00bcd4;">Hobbies</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white mb-2 border-0" style="background-color: #00bcd4;">Goals</a>
+                    <a href="#" class="list-group-item list-group-item-action text-white mb-2 border-0" style="background-color: #00bcd4;">Gallery</a>
+                </div>
+            </div>
+
+            <!-- 3. MIDDLE COLUMN: CONTENT (White) -->
+            <div class="col-md-6 col-lg-7">
+                <div class="bg-white p-4 border rounded shadow-sm">
+                    
+                    <!-- About Me -->
+                    <h3 class="fw-bold border-bottom pb-2">About Me</h3>
+                    <p>I'm on the walk. Living a faithful life.</p>
+                    <ul class="list-unstyled">
+                        <li><strong>Age:</strong> 20 years old</li>
+                        <li><strong>Email:</strong> xsrevelar@student.apc.edu.ph</li>
+                    </ul>
+
+                    <!-- Education -->
+                    <h3 class="fw-bold border-bottom pb-2 mt-4">Education & Achievements</h3>
+                    <p class="fw-bold mb-1">Bachelor of Science in Computer Science</p>
+                    <p class="text-muted small">Specialization in Cyber Security and Forensics</p>
+                    <ul>
+                        <li>App development last PURPCOM</li>
+                        <li>Cyber Security Enthusiast</li>
+                        <li>Graduated with Honors in highschool / With Honors last 1st year College</li>
+                    </ul>
+
+                    <!-- Hobbies -->
+                    <h3 class="fw-bold border-bottom pb-2 mt-4">Hobbies & Interests</h3>
+                    <p>Covering songs, playing guitars, preaching the Lord's word.</p>
+
+                    <!-- Gallery Image -->
+                    <h3 class="fw-bold border-bottom pb-2 mt-4">Picture Gallery</h3>
+                    <img src="https://imageio.forbes.com/specials-images/imageserve/68f10e3830760aaae7d070f5/The-White-Rabbit-from-Alice-in-Wonderland--a-digital-painting-by-Luz-Tapia/0x0.jpg?format=jpg&crop=1179,786,x0,y385,safe&width=960" 
+                         alt="White Rabbit" class="img-fluid rounded mt-2 border">
+                </div>
+            </div>
+
+            <!-- 4. RIGHT COLUMN: SIDEBAR (Yellow) -->
+            <div class="col-md-3 col-lg-3">
+                <div class="p-3 border rounded text-center h-100" style="background-color: #fcf8e3; border-color: #faebcc;">
+                    <!-- Profile Picture -->
+                    <img src="https://scontent.fmnl25-7.fna.fbcdn.net/v/t39.30808-6/506404868_2707300646135528_8803857674137605405_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=6JB6GMXfxiAQ7kNvwGtBIiN&_nc_oc=AdnuU5utZ83CInkXs7Kt0Uv2UJaemz0u-xU0kYVulBYfmLFLdPFYXUftr1Pd1nY-yUU&_nc_zt=23&_nc_ht=scontent.fmnl25-7.fna&_nc_gid=HQqy0jM71llrC0XNuyUjZQ&oh=00_Afi4yl4hknPba_8YSe6mOobMKN1Vr-qdQ8RwiVOt9FjxjA&oe=692B1877" 
+                         alt="Xander Profile" 
+                         class="img-fluid rounded-circle border border-3 border-white mb-3 shadow-sm" 
+                         style="width: 120px; height: 120px; object-fit: cover;">
+                    
+                    <h4 class="h5 fw-bold">Quick Facts</h4>
+                    <p class="small">I am 20 years old<br>Cyber Security Enthusiast</p>
+                    
+                    <hr>
+                    
+                    <h5 class="h6 fw-bold">My Passion</h5>
+                    <p class="small fst-italic">"Music and Faith are my core foundations."</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- FOOTER (Blue) -->
+    <div class="container-fluid text-white text-center py-3 mt-4" style="background-color: #008CBA;">
+        <small>Created by Xander Revelar - Powered by Bootstrap 5</small>
+    </div>
+
+    <!-- BOOTSTRAP JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
