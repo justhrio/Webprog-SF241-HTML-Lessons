@@ -1,80 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Profile - Xander Revelar</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+    </head>
 <body>
-    
-    <div class="container mt-4">
-        <!-- Header Section -->
-        <header class="text-center mb-5">
-            <img src="https://scontent.fmnl25-7.fna.fbcdn.net/v/t39.30808-6/506404868_2707300646135528_8803857674137605405_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=6JB6GMXfxiAQ7kNvwGtBIiN&_nc_oc=AdnuU5utZ83CInkXs7Kt0Uv2UJaemz0u-xU0kYVulBYfmLFLdPFYXUftr1Pd1nY-yUU&_nc_zt=23&_nc_ht=scontent.fmnl25-7.fna&_nc_gid=HQqy0jM71llrC0XNuyUjZQ&oh=00_Afi4yl4hknPba_8YSe6mOobMKN1Vr-qdQ8RwiVOt9FjxjA&oe=692B1877" alt="Xander Profile" class="img-fluid rounded-circle" style="max-width: 150px;">
-            <h1 class="mt-3">Xander Revelar</h1>
+    <div class="main-container">
+        <header>
+            <img src="https://drive.google.com/thumbnail?id=1iRtGIMd5vtrb9DLfHOdCEhYU51Ge1T6M&sz=w1000" alt="Xander Profile" class="profile-pic">
+            <h1>Xander Revelar</h1>
             <p>Bachelor of Science in Computer Science</p>
             <p><i>Specialization in Cyber Security and Forensics</i></p>
         </header>
 
-        <!-- Main Content with Responsive Auto Layout Columns -->
-        <div class="row">
-            
-            <!-- Column 1 -->
-            <div class="col-md">
-                <h3>About Me</h3>
-                <p>I'm on the walk. Living a faithful life.</p>
-                <ul>
-                    <li><strong>Age:</strong> 20 years old</li>
-                    <li><strong>Email:</strong> xsrevelar@student.apc.edu.ph</li>
-                </ul>
-            </div>
+        <div class="info-section">
+            <h2>About Me</h2>
+            <p>I'm on the walk. Living a faithful life.</p>
+            <ul>
+                <li><strong>Age:</strong> 20 years old</li>
+                <li><strong>Email:</strong> xsrevelar@student.apc.edu.ph</li>
+            </ul>
 
-            <!-- Column 2 -->
-            <div class="col-md">
-                <h3>Education & Achievements</h3>
-                <ul>
-                    <li>App development last PURPCOM</li>
-                    <li>Cyber Security Enthusiast</li>
-                    <li>Graduated with Honors in highschool / With Honors last 1st year College</li>
-                </ul>
-            </div>
+            <h2>Education & Achievements</h2>
+            <ul>
+                <li>App development last PURPCOM</li>
+                <li>Cyber Security Enthusiast</li>
+                <li>Graduated with Honors in highschool / With Honors last 1st year College</li>
+            </ul>
 
-            <!-- Column 3 -->
-            <div class="col-md">
-                <h3>Hobbies & Interests</h3>
-                <p>Covering songs, playing guitars, preaching the Lord's word.</p>
-            </div>
+            <h2>Hobbies & Interests</h2>
+            <p>Covering songs, playing guitars, preaching the Lord's word.</p>
         </div>
 
-        <!-- Added Text from the Screenshot -->
-        <div class="mt-5">
-            <h2>Responsive Auto Layout Columns</h2>
-            <p>In Bootstrap 5, there is an easy way to create equal width columns: just use the <code>.col-md</code> class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width.</p>
-            <p>If the screen size is <strong>less than 768px</strong>, the columns will stack horizontally.</p>
-
-            <!-- Visual Examples of the Grid -->
-            <div class="row mb-3">
-                <div class="col-md p-3 bg-primary text-white border border-white">1 of 2</div>
-                <div class="col-md p-3 bg-dark text-white border border-white">2 of 2</div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md p-3 bg-primary text-white border border-white">1 of 4</div>
-                <div class="col-md p-3 bg-dark text-white border border-white">2 of 4</div>
-                <div class="col-md p-3 bg-primary text-white border border-white">3 of 4</div>
-                <div class="col-md p-3 bg-dark text-white border border-white">4 of 4</div>
-            </div>
+        <div class="gallery-section">
+            <h2>Picture Gallery</h2>
+            <img src="https://imageio.forbes.com/specials-images/imageserve/68f10e3830760aaae7d070f5/The-White-Rabbit-from-Alice-in-Wonderland--a-digital-painting-by-Luz-Tapia/0x0.jpg?format=jpg&crop=1179,786,x0,y385,safe&width=960" alt="White Rabbit" class="gallery-img">
         </div>
-
-        <!-- Gallery Section -->
-        <div class="mt-5 mb-5">
-            <h3>Picture Gallery</h3>
-            <img src="https://imageio.forbes.com/specials-images/imageserve/68f10e3830760aaae7d070f5/The-White-Rabbit-from-Alice-in-Wonderland--a-digital-painting-by-Luz-Tapia/0x0.jpg?format=jpg&crop=1179,786,x0,y385,safe&width=960" alt="White Rabbit" class="img-fluid rounded">
-        </div>
+        <div class="container-fluid mt-3">
+  <h1>Responsive Auto Layout Columns</h1>
+  <p>In Bootstrap 5, there is an easy way to create equal width columns: just use the <code>.col-md</code> class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width.</p>
+  <p>If the screen size is <strong>less than 768px</strong>, the columns will stack horizontally.</p>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md bg-primary text-white">1 of 2</div>
+      <div class="col-md bg-dark text-white">2 of 2</div>
+    </div>  
+  </div>
+  <br>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md bg-primary text-white">1 of 4</div>
+      <div class="col-md bg-dark text-white">2 of 4</div>
+      <div class="col-md bg-primary text-white">3 of 4</div>
+      <div class="col-md bg-dark text-white">4 of 4</div>
+    </div>  
+  </div>
+</div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
