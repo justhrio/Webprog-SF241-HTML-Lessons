@@ -1,0 +1,19 @@
+/* --- FILE 2: SIDEBAR & GRID STYLES --- */
+.custom-sidebar {
+    background-color: #fcf8e3; /* Light Yellow */
+    border-radius: 5px;
+    padding: 20px;
+}
+
+/* TASK 03: CSS GRID for "Quick Facts" */
+.custom-sidebar ul {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Column 1: Fit content, Column 2: Fill rest */
+    gap: 10px; /* Space between columns */
+    padding: 0;
+}
+
+.custom-sidebar li {
+    display: contents; /* Allows the children (strong/text) to fit into the grid */
+    text-align: left;
+}

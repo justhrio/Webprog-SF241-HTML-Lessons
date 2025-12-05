@@ -1,0 +1,27 @@
+/* --- RWD: Handles Mobile Responsiveness --- */
+
+/* TASK 03: RESPONSIVE MEDIA QUERIES */
+@media screen and (max-width: 768px) {
+    
+    /* Resize profile picture on smaller screens */
+    .profile-img {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Center alignment for sidebar on mobile */
+    .custom-sidebar {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    /* Disable Grid on mobile for simple stacking */
+    .custom-sidebar ul {
+        display: block; 
+    }
+    
+    .custom-sidebar li {
+        display: block;
+        margin-bottom: 5px;
+    }
+}

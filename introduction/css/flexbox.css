@@ -1,0 +1,10 @@
+/* --- FILE 1: HEADER STYLES --- */
+.custom-header {
+    background-color: #800080; /* Deep Purple */
+    min-height: 80px;
+    
+    /* TASK 04: FLEXBOX */
+    display: flex;
+    align-items: center; /* Vertically center the content */
+    justify-content: center; /* Horizontally center */
+}
