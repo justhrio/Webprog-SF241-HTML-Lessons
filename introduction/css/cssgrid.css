@@ -1,11 +1,10 @@
 /* Gallery Layout using CSS Grid */
 .custom-grid-gallery {
     display: grid;
-    
     /* This creates columns that automatically fit the space */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     
-    /* This centers the image inside the grid area */
+    /* This centers the image inside the grid area if there is only one */
     place-items: center; 
     
     gap: 15px;
