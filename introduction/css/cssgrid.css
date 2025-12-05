@@ -1,19 +1,24 @@
-/* --- FILE 2: SIDEBAR & GRID STYLES --- */
-.custom-sidebar {
-    background-color: #fcf8e3; /* Light Yellow */
-    border-radius: 5px;
-    padding: 20px;
-}
-
-/* TASK 03: CSS GRID for "Quick Facts" */
-.custom-sidebar ul {
+/* Gallery Layout using CSS Grid */
+.custom-grid-gallery {
     display: grid;
-    grid-template-columns: auto 1fr; /* Column 1: Fit content, Column 2: Fill rest */
-    gap: 10px; /* Space between columns */
-    padding: 0;
+    /* Create a grid with auto-fitting columns, min 250px wide */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
 }
 
-.custom-sidebar li {
-    display: contents; /* Allows the children (strong/text) to fit into the grid */
-    text-align: left;
+/* Make the first image span 2 columns if space permits */
+.grid-item.main-img {
+    grid-column: span 2;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 3px solid white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }

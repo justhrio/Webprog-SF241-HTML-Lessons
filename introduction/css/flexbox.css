@@ -1,10 +1,13 @@
-/* --- FILE 1: HEADER STYLES --- */
-.custom-header {
-    background-color: #800080; /* Deep Purple */
-    min-height: 80px;
-    
-    /* TASK 04: FLEXBOX */
+/* Header Layout using Flexbox */
+.custom-flex-header {
     display: flex;
-    align-items: center; /* Vertically center the content */
-    justify-content: center; /* Horizontally center */
+    flex-direction: row;     /* Row by default */
+    align-items: center;     /* Vertically Center */
+    justify-content: start;  /* Align to left */
+    gap: 30px;               /* Space between image and text */
+}
+
+/* Ensure the text container takes available space */
+.text-container {
+    flex: 1;
 }

@@ -1,51 +1,20 @@
-/* --- MYSTYLE: Colors, Images, and Decoration --- */
-
-/* Header Color */
-.custom-header {
-    background-color: #800080; /* Deep Purple */
+/* General Page Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #dbe4eb; /* Your preferred background */
 }
 
-/* Sidebar Color */
-.custom-sidebar {
-    background-color: #fcf8e3; /* Light Yellow */
-    border-radius: 5px;
-    padding: 20px;
+/* Custom border used on the main white container */
+.border-top-custom {
+    border-top: 10px solid #4a90e2 !important; 
 }
 
-/* Images */
-.profile-img {
-    width: 150px;
-    height: 150px;
+/* Profile Picture Styling */
+.profile-pic {
+    width: 160px;
+    height: 160px;
     object-fit: cover;
     border-radius: 50%;
-    border: 5px solid white;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    transition: width 0.3s ease, height 0.3s ease;
-}
-
-.gallery-img {
-    border: 1px solid #ddd;
-    padding: 5px;
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: contain;
-}
-
-/* Components (Badges & Titles) */
-.custom-badge {
-    background-color: #00bcd4; /* Cyan Blue */
-    color: white;
-    font-size: 0.9em;
-    padding: 10px 15px;
-    border-radius: 20px;
-    display: inline-block;
-    margin: 2px;
-}
-
-.section-title {
-    color: #333;
-    border-bottom: 2px solid #00bcd4;
-    padding-bottom: 5px;
-    display: inline-block;
+    border: 6px solid #4a90e2; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }

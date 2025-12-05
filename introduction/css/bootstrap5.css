@@ -1,7 +1,25 @@
-/* --- BOOTSTRAP 5 FRAMEWORK --- 
-   
-   NOTE: We are currently loading Bootstrap 5 via the CDN link in your HTML file
-   (https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/...).
-   
-   This file is a placeholder for your local Bootstrap CSS if you decide to download it.
-*/
+/* Bootstap Card Overrides */
+.custom-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 12px; /* Softer corners */
+}
+
+/* Hover effect for cards */
+.custom-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15) !important;
+}
+
+/* Bootstrap List Group Item Customization */
+.list-group-item {
+    border: none;
+    border-left: 4px solid #4a90e2; /* Blue accent on left */
+    margin-bottom: 8px;
+    background-color: #f8f9fa; /* Light gray background */
+    transition: 0.2s ease;
+}
+
+.list-group-item:hover {
+    background-color: #e1efff;
+    padding-left: 25px; /* Slight movement on hover */
+}

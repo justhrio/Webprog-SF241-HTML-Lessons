@@ -1,27 +1,25 @@
-/* --- RWD: Handles Mobile Responsiveness --- */
-
-/* TASK 03: RESPONSIVE MEDIA QUERIES */
-@media screen and (max-width: 768px) {
+/* RWD: Adjustments for Screens smaller than 768px (Tablets/Mobile) */
+@media (max-width: 768px) {
     
-    /* Resize profile picture on smaller screens */
-    .profile-img {
-        width: 120px;
-        height: 120px;
-    }
-
-    /* Center alignment for sidebar on mobile */
-    .custom-sidebar {
+    /* Change Header Flex direction to Column on mobile */
+    .custom-flex-header {
+        flex-direction: column;
         text-align: center;
-        margin-bottom: 20px;
+        gap: 15px;
+    }
+
+    /* Adjust main padding */
+    .main-wrapper {
+        padding: 20px !important;
+    }
+
+    /* Reset Grid span for mobile so images stack nicely */
+    .grid-item.main-img {
+        grid-column: span 1;
     }
     
-    /* Disable Grid on mobile for simple stacking */
-    .custom-sidebar ul {
-        display: block; 
-    }
-    
-    .custom-sidebar li {
-        display: block;
-        margin-bottom: 5px;
+    /* Smaller font for the main title */
+    h1.display-4 {
+        font-size: 2.5rem;
     }
 }

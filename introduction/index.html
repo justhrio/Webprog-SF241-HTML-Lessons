@@ -5,113 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Profile - Xander Revelar</title>
     
-    <!-- 1. BOOTSTRAP 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     
-    <!-- 2. LINKING YOUR 5 NEW SEPARATE CSS FILES -->
-    <link rel="stylesheet" href="css/bootstrap5.css">
-    <link rel="stylesheet" href="css/cssgrid.css">
-    <link rel="stylesheet" href="css/flexbox.css">
-    <link rel="stylesheet" href="css/mystyle.css">
-    <link rel="stylesheet" href="css/rwd.css">
-</head>
+    <link rel="stylesheet" href="css/mystyle.css">      <link rel="stylesheet" href="css/bootstrap5.css">   <link rel="stylesheet" href="css/flexbox.css">      <link rel="stylesheet" href="css/cssgrid.css">      <link rel="stylesheet" href="css/rwd.css">          </head>
 <body class="bg-light">
 
-    <!-- Header / Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-header mb-4">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#">Xander Revelar</a>
-        </div>
-    </nav>
-
-    <div class="container">
-        <div class="row g-4">
+    <div class="container my-5">
+        <div class="main-wrapper bg-white p-4 p-md-5 rounded-4 shadow-lg border-top-custom">
             
-            <!-- LEFT COLUMN: Sidebar Profile -->
-            <div class="col-md-4">
-                <div class="card shadow-sm border-0 h-100">
-                    <div class="card-body text-center custom-sidebar">
-                        <img src="https://drive.google.com/thumbnail?id=1iRtGIMd5vtrb9DLfHOdCEhYU51Ge1T6M&sz=w1000" 
-                             alt="Xander Profile" 
-                             class="profile-img mb-3">
-                        
-                        <h3 class="card-title fw-bold">Xander Revelar</h3>
-                        <p class="text-muted mb-1">CS Student | Cyber Security</p>
-                        <hr>
-                        
-                        <div class="text-start mt-4">
-                            <h5 class="fw-bold section-title">Quick Facts</h5>
-                            <ul>
-                                <li><strong>Age:</strong> <span>20 years old</span></li>
-                                <li><strong>Email:</strong> <span>xsrevelar@student.apc.edu.ph</span></li>
+            <header class="custom-flex-header mb-5">
+                <div class="profile-container">
+                    <img src="https://drive.google.com/thumbnail?id=1iRtGIMd5vtrb9DLfHOdCEhYU51Ge1T6M&sz=w1000" 
+                         alt="Xander Profile" 
+                         class="profile-pic">
+                </div>
+                <div class="text-container">
+                    <h1 class="display-4 fw-bold text-dark">Xander Revelar</h1>
+                    <p class="lead text-primary fw-semibold mb-1">Bachelor of Science in Computer Science</p>
+                    <p class="text-secondary fst-italic">Specialization in Cyber Security and Forensics</p>
+                </div>
+            </header>
+
+            <hr class="mb-5">
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm custom-card">
+                        <div class="card-body">
+                            <h2 class="card-title h4 text-uppercase text-primary mb-3">About Me</h2>
+                            <p class="card-text">I'm on the walk. Living a faithful life.</p>
+                            <ul class="list-group list-group-flush mt-3">
+                                <li class="list-group-item"><strong>Age:</strong> 20 years old</li>
+                                <li class="list-group-item"><strong>Email:</strong> xsrevelar@student.apc.edu.ph</li>
                             </ul>
-                            
-                            <h5 class="fw-bold section-title mt-4">My Passion</h5>
-                            <p class="small">Music and Faith are my core foundations.</p>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!-- RIGHT COLUMN: Main Content -->
-            <div class="col-md-8">
-                <div class="card shadow-sm border-0">
-                    <div class="card-body p-4">
-                        
-                        <!-- About Section -->
-                        <div class="mb-4">
-                            <h2 class="text-primary fw-bold">About Me</h2>
-                            <p class="lead">I'm on the walk. Living a faithful life.</p>
+                <div class="col-md-6">
+                    <div class="card h-100 border-0 shadow-sm custom-card">
+                        <div class="card-body">
+                            <h2 class="card-title h4 text-uppercase text-primary mb-3">Education</h2>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">App development last PURPCOM</li>
+                                <li class="list-group-item">Cyber Security Enthusiast</li>
+                                <li class="list-group-item">Graduated with Honors</li>
+                            </ul>
                         </div>
-
-                        <!-- Education Section -->
-                        <div class="mb-4">
-                            <h4 class="fw-bold border-bottom pb-2">Education & Achievements</h4>
-                            <div class="mt-3">
-                                <h5>Bachelor of Science in Computer Science</h5>
-                                <p class="text-muted">Specialization in Cyber Security and Forensics</p>
-                                <ul class="list-group list-group-flush">
-                                    <li class="list-group-item">App development last PURPCOM</li>
-                                    <li class="list-group-item">Cyber Security Enthusiast</li>
-                                    <li class="list-group-item">Graduated with Honors in High School</li>
-                                    <li class="list-group-item">With Honors last 1st year College</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Hobbies Section -->
-                        <div class="mb-4">
-                            <h4 class="fw-bold border-bottom pb-2">Hobbies & Interests</h4>
-                            <div class="d-flex gap-2 mt-3 flex-wrap">
-                                <span class="badge custom-badge">Covering Songs</span>
-                                <span class="badge custom-badge">Playing Guitar</span>
-                                <span class="badge custom-badge">Preaching the Word</span>
-                            </div>
-                        </div>
-
-                        <!-- Gallery Section -->
-                        <div>
-                            <h4 class="fw-bold border-bottom pb-2">Picture Gallery</h4>
-                            <div class="mt-3 text-center">
-                                <img src="https://imageio.forbes.com/specials-images/imageserve/68f10e3830760aaae7d070f5/The-White-Rabbit-from-Alice-in-Wonderland--a-digital-painting-by-Luz-Tapia/0x0.jpg?format=jpg&crop=1179,786,x0,y385,safe&width=960" 
-                                     alt="White Rabbit" 
-                                     class="img-fluid rounded gallery-img">
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-            </div>
 
-        </div>
+                <div class="col-12">
+                    <div class="card border-0 shadow-sm custom-card bg-primary-subtle">
+                        <div class="card-body text-center">
+                            <h2 class="card-title h4 text-uppercase text-dark mb-3">Hobbies</h2>
+                            <p class="card-text fs-5">Covering songs, playing guitars, preaching the Lord's word.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 mt-5">
+                    <h3 class="text-center mb-4 text-secondary">My Gallery</h3>
+                    <div class="custom-grid-gallery">
+                        <div class="grid-item main-img">
+                            <img src="https://imageio.forbes.com/specials-images/imageserve/68f10e3830760aaae7d070f5/The-White-Rabbit-from-Alice-in-Wonderland--a-digital-painting-by-Luz-Tapia/0x0.jpg?format=jpg&crop=1179,786,x0,y385,safe&width=960" alt="Art 1">
+                        </div>
+                        <div class="grid-item"><img src="https://picsum.photos/400/300?grayscale" alt="Placeholder 1"></div>
+                        <div class="grid-item"><img src="https://picsum.photos/400/301?grayscale" alt="Placeholder 2"></div>
+                    </div>
+                </div>
+
+            </div> 
+        </div> 
     </div>
 
-    <!-- Footer -->
-    <footer class="text-center mt-5 py-3 text-muted">
-        <small>Created by Xander Revelar - Week 4 Task 01</small>
-    </footer>
-
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
