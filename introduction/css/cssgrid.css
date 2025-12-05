@@ -1,26 +1,45 @@
-/* Gallery Layout using CSS Grid */
+/* css/cssgrid.css */
+
+/* Gallery Layout container */
 .custom-grid-gallery {
     display: grid;
-    /* This creates columns that automatically fit the space */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    
-    /* This centers the image inside the grid area if there is only one */
     place-items: center; 
-    
     gap: 15px;
     padding: 15px;
-    background-color: #f1f1f1;
-    border-radius: 10px;
+    background-color: #f8f9fa; /* Slightly lighter background */
+    border-radius: 12px;
 }
 
+/* --- IMAGE STYLING START --- */
+
+/* 1. The BASE state (how it looks normally) */
 .grid-item img {
     max-width: 100%;
     height: auto;
     object-fit: contain;
-    border-radius: 5px;
+    border-radius: 8px; /* Slightly softer corners */
     border: 4px solid white;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     
-    /* Ensure image doesn't get too huge on big screens */
-    max-height: 400px; 
+    /* Initial subtle shadow */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    
+    /* CONSTRAINT: Ensure it's a "reasonable size" */
+    max-height: 350px; 
+
+    /* SMOOTHNESS: This makes the hover effect animate smoothly */
+    transition: all 0.3s ease-in-out;
 }
+
+/* 2. The HOVER state (how it responds to the mouse) */
+.grid-item img:hover {
+    /* ACTION: Move up 5 pixels and scale up just 3% ("not that big") */
+    transform: translateY(-5px) scale(1.03);
+    
+    /* ACTION: Make shadow deeper and softer to create a "lifting" effect */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    
+    /* Optional: subtle change to border color to match your theme */
+    border-color: #e1efff;
+}
+/* --- IMAGE STYLING END --- */
