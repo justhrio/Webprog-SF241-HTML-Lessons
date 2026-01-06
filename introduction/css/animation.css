@@ -16,7 +16,14 @@
 @keyframes blink { 50% { opacity: 0; } }
 
 /* Gallery Hover Overlay */
-.gallery-grid { padding: 0 10%; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+.gallery-grid { 
+    padding: 0 10%; 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+    justify-content: center; /* NEW: Forces the items to the center */
+}
+
 .gallery-item { position: relative; overflow: hidden; border-radius: 15px; height: 300px; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
 .overlay {
