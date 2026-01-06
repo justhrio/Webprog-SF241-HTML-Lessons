@@ -1,45 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Profile - Xander Revelar</title>
-    <link rel="stylesheet" href="css/mystyle.css">
-    </head>
+    <title>Xander Revelar | Portfolio</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
 <body>
-    <div class="main-container">
-        <header>
-            <img src="https://scontent.fmnl25-7.fna.fbcdn.net/v/t39.30808-6/506404868_2707300646135528_8803857674137605405_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=6JB6GMXfxiAQ7kNvwGtBIiN&_nc_oc=AdnuU5utZ83CInkXs7Kt0Uv2UJaemz0u-xU0kYVulBYfmLFLdPFYXUftr1Pd1nY-yUU&_nc_zt=23&_nc_ht=scontent.fmnl25-7.fna&_nc_gid=HQqy0jM71llrC0XNuyUjZQ&oh=00_Afi4yl4hknPba_8YSe6mOobMKN1Vr-qdQ8RwiVOt9FjxjA&oe=692B1877" alt="Xander Profile" class="profile-pic">
-            <h1>Xander Revelar</h1>
-            <p>Bachelor of Science in Computer Science</p>
-            <p><i>Specialization in Cyber Security and Forensics</i></p>
-        </header>
 
-        <div class="info-section">
-            <h2>About Me</h2>
-            <p>I'm on the walk. Living a faithful life.</p>
-            <ul>
-                <li><strong>Age:</strong> 20 years old</li>
-                <li><strong>Email:</strong> xsrevelar@student.apc.edu.ph</li>
-            </ul>
-
-            <h2>Education & Achievements</h2>
-            <ul>
-                <li>App development last PURPCOM</li>
-                <li>Cyber Security Enthusiast</li>
-                <li>Graduated with Honors in highschool / With Honors last 1st year College</li>
-            </ul>
-
-            <h2>Hobbies & Interests</h2>
-            <p>Covering songs, playing guitars, preaching the Lord's word.</p>
-        </div>
-
-        <div class="gallery-section">
-            <h2>Picture Gallery</h2>
-            <img src="https://imageio.forbes.com/specials-images/imageserve/68f10e3830760aaae7d070f5/The-White-Rabbit-from-Alice-in-Wonderland--a-digital-painting-by-Luz-Tapia/0x0.jpg?format=jpg&crop=1179,786,x0,y385,safe&width=960" alt="White Rabbit" class="gallery-img">
-        </div>
-
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
     </div>
 
+    <nav class="navbar">
+        <div class="logo">XR.</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact" class="btn-contact">Contact</a></li>
+            <li class="theme-switch">
+                <i class="fas fa-moon" id="theme-icon"></i>
+            </li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content hidden">
+            <h3>Hello, I'm</h3>
+            <h1>Xander Revelar</h1>
+            <h2 class="typing-text">I am a <span class="typewriter"></span></h2>
+            <p>Specializing in Cyber Security & Forensics. Living a faithful life.</p>
+            
+            <div class="social-icons">
+                <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+            
+            <a href="mailto:sabibomb@gmail.com" class="btn-primary">Email Me</a>
+        </div>
+        <div class="hero-img hidden">
+            <img src="https://scontent.fmnl25-8.fna.fbcdn.net/v/t39.30808-6/605227582_2900594776806113_7891159994074062792_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=aJ08143lsEMQ7kNvwFdh2zu&_nc_oc=Adk4KGjcpuh6naMT1_mPDcaEiWS9wPrV0ApgAnv_cAxjUfcfFjouQaR9H0cuKI60coA&_nc_zt=23&_nc_ht=scontent.fmnl25-8.fna&_nc_gid=9QuM3HZTTH-ptzKSlS8vfA&oh=00_AfrDqarA6n2lEVYdTn-AecUKxDbtQkUFJhSNpszYsjSiRA&oe=69625FAE" alt="Xander Profile">
+        </div>
+    </section>
+
+    <section id="about" class="glass-section hidden">
+        <h2 class="section-title">What I Do</h2>
+        <div class="cards-grid">
+            <div class="glass-card">
+                <i class="fas fa-shield-alt card-icon"></i>
+                <h3>Cyber Security</h3>
+                <p>Protecting digital assets and analyzing forensic data.</p>
+            </div>
+            <div class="glass-card">
+                <i class="fas fa-code card-icon"></i>
+                <h3>Web Development</h3>
+                <p>Building responsive and interactive websites.</p>
+            </div>
+            <div class="glass-card">
+                <i class="fas fa-guitar card-icon"></i>
+                <h3>Music & Arts</h3>
+                <p>Playing guitar and covering songs for the soul.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="hidden">
+        <h2 class="section-title">My Work</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://imageio.forbes.com/specials-images/imageserve/68f10e3830760aaae7d070f5/The-White-Rabbit-from-Alice-in-Wonderland--a-digital-painting-by-Luz-Tapia/0x0.jpg?format=jpg&crop=1179,786,x0,y385,safe&width=960" alt="Project 1">
+                <div class="overlay">
+                    <h3>The White Rabbit</h3>
+                    <p>Digital Art Analysis</p>
+                </div>
+            </div>
+            </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Let's Connect</h2>
+        <p>Open for opportunities and collaborations.</p>
+        <a href="mailto:sabibomb@gmail.com" class="email-link">sabibomb@gmail.com</a>
+        
+        <div class="footer-socials">
+            <a href="#">https://www.linkedin.com/in/xander-revelar-40141a326/<i class="fab fa-linkedin"></i></a>
+            <a href="#">https://www.facebook.com/xander.revelar.8/<i class="fab fa-facebook"></i></a>
+            <a href="#">https://www.instagram.com/xndrrrrrr/<i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="copyright">&copy; 2026 Xander Revelar</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
