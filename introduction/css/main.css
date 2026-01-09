@@ -1,8 +1,10 @@
+/* css/main.css */
+
 :root {
     --bg-color: #f0f2f5;
     --text-color: #333;
     --primary-color: #4a90e2;
-    --card-bg: rgba(255, 255, 255, 0.6);
+    --card-bg: rgba(255, 255, 255, 0.75); /* More opaque for better readability */
     --glass-border: rgba(255, 255, 255, 0.8);
     --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
@@ -11,7 +13,7 @@
     --bg-color: #0f172a;
     --text-color: #e2e8f0;
     --primary-color: #38bdf8;
-    --card-bg: rgba(30, 41, 59, 0.7);
+    --card-bg: rgba(30, 41, 59, 0.8);
     --glass-border: rgba(255, 255, 255, 0.1);
     --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
@@ -76,25 +78,28 @@ body { background: var(--bg-color); color: var(--text-color); overflow-x: hidden
     box-shadow: 0 0 50px rgba(74, 144, 226, 0.3);
 }
 
-/* NEW: Center Section Titles */
+/* --- CENTER TITLES FIX --- */
 .section-title {
-    text-align: center;
-    margin-bottom: 40px;
+    text-align: center; /* Forces text to center */
+    margin: 60px 0 40px 0;
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary-color);
+    width: 100%; /* Ensures it spans full width to center properly */
 }
 
 /* Glassmorphism Cards */
 .cards-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    display: flex; /* Switched to Flex for better centering of 3 items */
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 30px; 
-    padding: 50px 10%; 
-    justify-content: center; /* NEW: Center the grid content */
+    padding: 0 10% 50px; 
 }
 
 .glass-card {
+    flex: 1 1 300px; /* Grow to fill space, but start at 300px width */
+    max-width: 350px; /* Don't get too wide */
     background: var(--card-bg); backdrop-filter: blur(10px);
     border: 1px solid var(--glass-border); padding: 30px; border-radius: 20px;
     text-align: center; box-shadow: var(--shadow); transition: transform 0.3s;
