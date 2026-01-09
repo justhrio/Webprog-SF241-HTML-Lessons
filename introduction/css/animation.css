@@ -1,69 +1,50 @@
-/* css/animations.css */
+/* css/animation.css */
 
-/* Scroll Reveal Animation */
+/* 1. SCROLL REVEAL (Makes things fade in) */
 .hidden { opacity: 0; transform: translateY(50px); transition: all 1s ease; }
 .show { opacity: 1; transform: translateY(0); }
 
-/* Floating Background */
-@keyframes float {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
-}
-
-/* Typing Cursor */
-.typewriter::after {
-    content: '|';
-    animation: blink 0.7s infinite;
-}
-@keyframes blink { 50% { opacity: 0; } }
-
-/* --- GALLERY FIX START --- */
+/* 2. THE GALLERY CONTAINER (This CENTERS the image) */
 .gallery-grid { 
-    padding: 0 10%; 
-    /* CHANGED: Switched to Flexbox for better centering of single items */
-    display: flex;
-    justify-content: center; /* Centers items horizontally */
-    flex-wrap: wrap;         /* Allows items to wrap if you add more later */
+    display: flex;             
+    justify-content: center;   /* Horizontal Center */
+    flex-wrap: wrap;          
     gap: 30px; 
+    padding: 0 10% 50px; 
 }
 
+/* 3. THE IMAGE BOX (This constrains the size) */
 .gallery-item { 
     position: relative; 
-    overflow: hidden; 
     border-radius: 15px; 
-    height: 350px; /* Slightly taller for better visibility */
-    width: 350px;  /* Fixed width ensures it looks like a card */
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* Consistent shadow */
+    overflow: hidden;
+    height: 350px;       /* Fixed Height */
+    width: 350px;        /* Fixed Width */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    background: #000;    /* Background fallback */
 }
 
 .gallery-item img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
+    width: 100%; height: 100%; object-fit: cover; 
     transition: 0.5s; 
 }
 
-/* Overlay Text Styling */
+/* 4. THE TEXT OVERLAY (Puts text ON TOP of image) */
 .overlay {
     position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); /* Dark fade */
     display: flex; flex-direction: column; justify-content: flex-end;
     padding: 20px; opacity: 0; transition: 0.5s;
-    text-align: center; /* Center the text inside the overlay */
+    text-align: center;
 }
-
-.overlay h3 { 
-    color: white; font-size: 1.5rem; margin-bottom: 5px; 
-    transform: translateY(20px); transition: 0.5s; 
-}
-
-.overlay p { 
-    color: #ddd; font-size: 1rem; 
-    transform: translateY(20px); transition: 0.5s; 
-}
+.overlay h3 { color: white; transform: translateY(20px); transition: 0.5s; margin-bottom: 5px;}
+.overlay p { color: #ddd; transform: translateY(20px); transition: 0.5s; font-size: 0.9rem;}
 
 /* Hover Effects */
 .gallery-item:hover img { transform: scale(1.1); }
 .gallery-item:hover .overlay { opacity: 1; }
 .gallery-item:hover h3, .gallery-item:hover p { transform: translateY(0); }
-/* --- GALLERY FIX END --- */
+
+/* Typing Cursor */
+.typewriter::after { content: '|'; animation: blink 0.7s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
