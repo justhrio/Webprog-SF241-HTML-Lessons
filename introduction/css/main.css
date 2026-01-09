@@ -1,112 +1,100 @@
-/* css/main.css */
+/* css/main.css - FINAL FIXED VERSION */
 
 :root {
     --bg-color: #f0f2f5;
     --text-color: #333;
     --primary-color: #4a90e2;
-    --card-bg: rgba(255, 255, 255, 0.75); /* More opaque for better readability */
+    --card-bg: rgba(255, 255, 255, 0.6);
     --glass-border: rgba(255, 255, 255, 0.8);
     --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
 }
 
-[data-theme="dark"] {
-    --bg-color: #0f172a;
-    --text-color: #e2e8f0;
-    --primary-color: #38bdf8;
-    --card-bg: rgba(30, 41, 59, 0.8);
-    --glass-border: rgba(255, 255, 255, 0.1);
-    --shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-}
-
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; transition: background 0.3s, color 0.3s; }
-
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 body { background: var(--bg-color); color: var(--text-color); overflow-x: hidden; }
 
-/* Animated Background Shapes */
-.background-shapes .shape {
-    position: absolute;
-    filter: blur(100px);
-    z-index: -1;
-    animation: float 10s infinite alternate;
-}
-.shape-1 { top: -10%; left: -10%; width: 500px; height: 500px; background: #4a90e2; border-radius: 50%; opacity: 0.4; }
-.shape-2 { bottom: 10%; right: -5%; width: 400px; height: 400px; background: #9b59b6; border-radius: 50%; opacity: 0.3; animation-delay: 2s; }
-
-/* Navbar */
+/* 1. NAVBAR */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
     padding: 20px 10%; position: fixed; width: 100%; top: 0;
-    background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px);
     z-index: 1000; border-bottom: 1px solid var(--glass-border);
 }
 .logo { font-size: 1.5rem; font-weight: 700; color: var(--primary-color); }
-.nav-links { display: flex; list-style: none; align-items: center; gap: 30px; }
+.nav-links { display: flex; list-style: none; gap: 30px; }
 .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; }
-.nav-links a:hover { color: var(--primary-color); }
 
-/* Theme Switcher */
-.theme-switch { cursor: pointer; font-size: 1.2rem; }
-
-/* Hero Section */
+/* 2. HERO SECTION */
 .hero {
     min-height: 100vh; display: flex; align-items: center; justify-content: space-between;
-    padding: 0 10%; margin-top: 50px;
+    padding: 120px 10% 0; /* Added top padding so it doesn't hide behind navbar */
 }
-.hero-content h1 { font-size: 4rem; font-weight: 700; line-height: 1.2; }
+.hero-content h1 { font-size: 4rem; font-weight: 700; }
 .hero-content h3 { font-size: 1.5rem; color: var(--primary-color); }
-.hero-content p { margin: 20px 0; max-width: 500px; }
-.typing-text { font-size: 2rem; color: var(--text-color); height: 50px; }
-
-/* Social Icons */
-.social-icons a {
-    display: inline-flex; justify-content: center; align-items: center;
-    width: 40px; height: 40px; border: 2px solid var(--primary-color);
-    border-radius: 50%; color: var(--primary-color); margin-right: 15px;
-    text-decoration: none; transition: 0.3s;
-}
-.social-icons a:hover { background: var(--primary-color); color: #fff; box-shadow: 0 0 10px var(--primary-color); }
-
-.btn-primary {
-    display: inline-block; padding: 12px 28px; background: var(--primary-color);
-    color: white; text-decoration: none; border-radius: 25px; margin-top: 25px;
-    box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
-}
-
 .hero-img img {
     width: 400px; height: 400px; border-radius: 50%; object-fit: cover;
     border: 5px solid var(--primary-color);
     box-shadow: 0 0 50px rgba(74, 144, 226, 0.3);
 }
 
-/* --- CENTER TITLES FIX --- */
+/* 3. SECTION TITLES (Centered) */
 .section-title {
-    text-align: center; /* Forces text to center */
-    margin: 60px 0 40px 0;
+    text-align: center;
+    margin: 80px 0 40px 0;
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary-color);
-    width: 100%; /* Ensures it spans full width to center properly */
+    width: 100%;
 }
 
-/* Glassmorphism Cards */
-.cards-grid { 
-    display: flex; /* Switched to Flex for better centering of 3 items */
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px; 
-    padding: 0 10% 50px; 
+/* 4. CARDS GRID */
+.cards-grid {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; padding: 0 10%;
 }
-
 .glass-card {
-    flex: 1 1 300px; /* Grow to fill space, but start at 300px width */
-    max-width: 350px; /* Don't get too wide */
-    background: var(--card-bg); backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border); padding: 30px; border-radius: 20px;
-    text-align: center; box-shadow: var(--shadow); transition: transform 0.3s;
+    background: var(--card-bg); padding: 30px; border-radius: 20px;
+    text-align: center; width: 300px;
+    box-shadow: var(--shadow); border: 1px solid var(--glass-border);
 }
-.glass-card:hover { transform: translateY(-10px); }
 .card-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
 
-/* Footer */
-footer { text-align: center; padding: 50px 10%; background: var(--card-bg); margin-top: 50px; }
-.email-link { font-size: 1.5rem; color: var(--primary-color); text-decoration: none; font-weight: bold; }
+/* 5. PORTFOLIO GALLERY (Centered & Fixed Size) */
+.gallery-grid {
+    display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;
+    padding: 0 10% 100px; width: 100%;
+}
+
+.gallery-item {
+    position: relative; border-radius: 15px; overflow: hidden;
+    height: 350px; width: 350px; /* Fixed size */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
+
+/* Overlay Text */
+.overlay {
+    position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    padding: 20px; opacity: 0; transition: 0.5s; text-align: center;
+}
+.overlay h3 { color: white; transform: translateY(20px); transition: 0.5s; margin-bottom: 5px; }
+.overlay p { color: #ddd; transform: translateY(20px); transition: 0.5s; }
+
+.gallery-item:hover img { transform: scale(1.1); }
+.gallery-item:hover .overlay { opacity: 1; }
+.gallery-item:hover h3, .gallery-item:hover p { transform: translateY(0); }
+
+/* 6. MISC */
+.btn-primary {
+    display: inline-block; padding: 12px 28px; background: var(--primary-color);
+    color: white; text-decoration: none; border-radius: 25px; margin-top: 25px;
+}
+footer { text-align: center; padding: 50px 10%; margin-top: 50px; background: white; }
+
+/* EMERGENCY VISIBILITY FIX - This forces everything to show up */
+.hidden, .show, .hero-content, .hero-img, .glass-section {
+    opacity: 1 !important;
+    transform: none !important;
+    visibility: visible !important;
+}
