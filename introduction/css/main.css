@@ -1,9 +1,9 @@
-/* css/main.css - FINAL FIXED VERSION */
+/* css/main.css - COMPLETE FIXED VERSION */
 
 :root {
     --bg-color: #f0f2f5;
     --text-color: #333;
-    --primary-color: #4a90e2;
+    --primary-color: #4a90e2; /* The Blue Color */
     --card-bg: rgba(255, 255, 255, 0.6);
     --glass-border: rgba(255, 255, 255, 0.8);
     --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
@@ -12,7 +12,32 @@
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
 body { background: var(--bg-color); color: var(--text-color); overflow-x: hidden; }
 
-/* 1. NAVBAR */
+/* --- 1. RESTORED BACKGROUND SHAPES (The Blue Glow) --- */
+.background-shapes .shape {
+    position: absolute;
+    filter: blur(100px);
+    z-index: -1;
+    animation: float 10s infinite alternate;
+}
+.shape-1 { 
+    top: -10%; left: -10%; 
+    width: 500px; height: 500px; 
+    background: #4a90e2; /* BLUE GLOW */
+    border-radius: 50%; opacity: 0.4; 
+}
+.shape-2 { 
+    bottom: 10%; right: -5%; 
+    width: 400px; height: 400px; 
+    background: #9b59b6; /* PURPLE GLOW */
+    border-radius: 50%; opacity: 0.3; 
+    animation-delay: 2s; 
+}
+@keyframes float {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(50px, 50px); }
+}
+
+/* --- 2. NAVBAR --- */
 .navbar {
     display: flex; justify-content: space-between; align-items: center;
     padding: 20px 10%; position: fixed; width: 100%; top: 0;
@@ -23,10 +48,10 @@ body { background: var(--bg-color); color: var(--text-color); overflow-x: hidden
 .nav-links { display: flex; list-style: none; gap: 30px; }
 .nav-links a { text-decoration: none; color: var(--text-color); font-weight: 500; }
 
-/* 2. HERO SECTION */
+/* --- 3. HERO SECTION --- */
 .hero {
     min-height: 100vh; display: flex; align-items: center; justify-content: space-between;
-    padding: 120px 10% 0; /* Added top padding so it doesn't hide behind navbar */
+    padding: 0 10%; margin-top: 50px;
 }
 .hero-content h1 { font-size: 4rem; font-weight: 700; }
 .hero-content h3 { font-size: 1.5rem; color: var(--primary-color); }
@@ -36,19 +61,20 @@ body { background: var(--bg-color); color: var(--text-color); overflow-x: hidden
     box-shadow: 0 0 50px rgba(74, 144, 226, 0.3);
 }
 
-/* 3. SECTION TITLES (Centered) */
+/* --- 4. SECTION TITLES --- */
 .section-title {
     text-align: center;
-    margin: 80px 0 40px 0;
+    margin: 60px 0 40px 0;
     font-size: 2.5rem;
     font-weight: 700;
     color: var(--primary-color);
     width: 100%;
 }
 
-/* 4. CARDS GRID */
+/* --- 5. CARDS GRID (What I Do) --- */
 .cards-grid {
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; padding: 0 10%;
+    display: flex; justify-content: center; flex-wrap: wrap;
+    gap: 30px; padding: 0 10%;
 }
 .glass-card {
     background: var(--card-bg); padding: 30px; border-radius: 20px;
@@ -57,21 +83,21 @@ body { background: var(--bg-color); color: var(--text-color); overflow-x: hidden
 }
 .card-icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
 
-/* 5. PORTFOLIO GALLERY (Centered & Fixed Size) */
+/* --- 6. PORTFOLIO GALLERY (Centered Image) --- */
 .gallery-grid {
-    display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;
-    padding: 0 10% 100px; width: 100%;
+    display: flex; justify-content: center; align-items: center;
+    flex-wrap: wrap; gap: 30px; padding: 0 10% 50px; width: 100%;
 }
-
 .gallery-item {
     position: relative; border-radius: 15px; overflow: hidden;
-    height: 350px; width: 350px; /* Fixed size */
+    height: 350px; width: 350px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+.gallery-item img {
+    width: 100%; height: 100%; object-fit: cover; transition: 0.5s;
+}
 
-.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.5s; }
-
-/* Overlay Text */
+/* --- 7. HOVER OVERLAY --- */
 .overlay {
     position: absolute; bottom: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
@@ -85,16 +111,11 @@ body { background: var(--bg-color); color: var(--text-color); overflow-x: hidden
 .gallery-item:hover .overlay { opacity: 1; }
 .gallery-item:hover h3, .gallery-item:hover p { transform: translateY(0); }
 
-/* 6. MISC */
+/* --- 8. FOOTER & EXTRAS --- */
+footer { text-align: center; padding: 50px 10%; margin-top: 50px; background: white;}
 .btn-primary {
     display: inline-block; padding: 12px 28px; background: var(--primary-color);
     color: white; text-decoration: none; border-radius: 25px; margin-top: 25px;
 }
-footer { text-align: center; padding: 50px 10%; margin-top: 50px; background: white; }
-
-/* EMERGENCY VISIBILITY FIX - This forces everything to show up */
-.hidden, .show, .hero-content, .hero-img, .glass-section {
-    opacity: 1 !important;
-    transform: none !important;
-    visibility: visible !important;
-}
+.typewriter::after { content: '|'; animation: blink 0.7s infinite; }
+@keyframes blink { 50% { opacity: 0; } }
