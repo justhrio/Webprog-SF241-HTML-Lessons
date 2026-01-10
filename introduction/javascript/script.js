@@ -5,18 +5,25 @@ const { createApp } = Vue;
 createApp({
     data() {
         return {
-            // FILTERING LOGIC
+            // --- TYPING EFFECT DATA ---
+            displayText: '',
+            words: ["Cyber Security Specialist", "Forensics Analyst", "Faithful Believer"],
+            wordIndex: 0,
+            isDeleting: false,
+            typingSpeed: 100,
+
+            // --- FILTERING LOGIC ---
             currentCategory: 'All',
             categories: ['All', 'Security', 'Development', 'IoT'],
 
-            // SERVICES DATA
+            // --- SERVICES DATA ---
             services: [
                 { title: "Cyber Security", desc: "Vulnerability Assessment, Forensics & Network Defense.", icon: "fas fa-shield-alt" },
                 { title: "Web Development", desc: "Full-stack apps using Vue, React, and Modern CSS.", icon: "fas fa-code" },
                 { title: "Music & Arts", desc: "Creative expression through sound and digital art.", icon: "fas fa-guitar" }
             ],
 
-            // SKILLS DATA (Matches your screenshot requirements)
+            // --- SKILLS DATA ---
             skills: {
                 "Languages": [
                     { name: "Python", icon: "devicon-python-plain colored" },
@@ -26,22 +33,21 @@ createApp({
                     { name: "JavaScript", icon: "devicon-javascript-plain colored" }
                 ],
                 "Frameworks": [
-                    { name: "Vue.js", icon: "devicon-vuejs-plain colored" }, // Suggesting Vue since we are using it!
+                    { name: "Vue.js", icon: "devicon-vuejs-plain colored" },
                     { name: "React", icon: "devicon-react-original colored" },
                     { name: "Bootstrap", icon: "devicon-bootstrap-plain colored" }
                 ],
                 "Databases": [
-                    { name: "MySQL", icon: "devicon-mysql-plain colored" },
-                    // Placeholder for "Dolphin" icon if MySQL isn't enough
+                    { name: "MySQL", icon: "devicon-mysql-plain colored" }
                 ],
                 "DevOps / Tools": [
-                    { name: "Kali Linux", icon: "devicon-linux-plain" }, // Kali specific icon or generic linux
+                    { name: "Kali Linux", icon: "devicon-linux-plain" },
                     { name: "Git", icon: "devicon-git-plain colored" },
-                    { name: "Wireshark", icon: "fas fa-network-wired" } // Using FontAwesome for tools without devicons
+                    { name: "Wireshark", icon: "fas fa-network-wired" }
                 ]
             },
 
-            // PORTFOLIO PROJECTS
+            // --- PORTFOLIO PROJECTS ---
             projects: [
                 { 
                     title: "Network Defense", 
@@ -65,12 +71,44 @@ createApp({
         }
     },
     computed: {
-        // This is the logic that filters the projects automatically
         filteredProjects() {
             if (this.currentCategory === 'All') {
                 return this.projects;
             }
             return this.projects.filter(project => project.category === this.currentCategory);
         }
+    },
+    methods: {
+        // --- TYPING LOGIC (Now inside Vue) ---
+        typeWriter() {
+            const currentWord = this.words[this.wordIndex];
+            
+            if (this.isDeleting) {
+                // Delete char
+                this.displayText = currentWord.substring(0, this.displayText.length - 1);
+                this.typingSpeed = 50;
+            } else {
+                // Add char
+                this.displayText = currentWord.substring(0, this.displayText.length + 1);
+                this.typingSpeed = 100;
+            }
+
+            if (!this.isDeleting && this.displayText === currentWord) {
+                // Finished typing word, pause then delete
+                this.isDeleting = true;
+                this.typingSpeed = 2000;
+            } else if (this.isDeleting && this.displayText === '') {
+                // Finished deleting, move to next word
+                this.isDeleting = false;
+                this.wordIndex = (this.wordIndex + 1) % this.words.length;
+                this.typingSpeed = 500;
+            }
+
+            setTimeout(this.typeWriter, this.typingSpeed);
+        }
+    },
+    mounted() {
+        // Start the typing animation as soon as the app loads
+        this.typeWriter();
     }
 }).mount('#vue-app');
