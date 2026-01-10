@@ -79,7 +79,7 @@ createApp({
         }
     },
     methods: {
-        // --- TYPING LOGIC (Now inside Vue) ---
+        // --- TYPING LOGIC (FIXED) ---
         typeWriter() {
             const currentWord = this.words[this.wordIndex];
             
@@ -104,11 +104,11 @@ createApp({
                 this.typingSpeed = 500;
             }
 
-            setTimeout(this.typeWriter, this.typingSpeed);
+            // --- THE FIX IS HERE: Use arrow function () => ---
+            setTimeout(() => this.typeWriter(), this.typingSpeed);
         }
     },
     mounted() {
-        // Start the typing animation as soon as the app loads
         this.typeWriter();
     }
 }).mount('#vue-app');
