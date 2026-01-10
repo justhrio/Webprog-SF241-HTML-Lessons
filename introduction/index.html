@@ -6,105 +6,117 @@
     <title>Xander Revelar | Portfolio</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="css/main.css?v=102">
-    <link rel="stylesheet" href="css/animation.css?v=102">
+    <link rel="stylesheet" href="css/main.css?v=200">
+    <link rel="stylesheet" href="css/animation.css?v=200">
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
 
     <div class="background-shapes">
         <div class="shape shape-1"></div>
         <div class="shape shape-2"></div>
-    </div>
+        <div class="shape shape-3"></div> </div>
 
     <nav class="navbar">
         <div class="logo">XR.</div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#portfolio">Portfolio</a></li>
             <li><a href="#contact" class="btn-contact">Contact</a></li>
         </ul>
     </nav>
 
-    <section id="home" class="hero">
-        <div class="hero-content">
-            <h3>Hello, I'm</h3>
-            <h1>Xander Revelar</h1>
-            
-            <h2 class="typing-text">I am a <span class="typewriter"></span></h2>
-            
-            <p>Specializing in Cyber Security & Forensics. Living a faithful life.</p>
-            
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/xander-revelar-40141a326/" target="_blank">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/justhrio" target="_blank">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.facebook.com/xander.revelar.8/" target="_blank">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://www.instagram.com/xndrrrrrr/" target="_blank">
-                    <i class="fab fa-instagram"></i>
-                </a>
-            </div>
-            
-            <a href="mailto:sabibomb@gmail.com" class="btn-primary">Email Me</a>
-        </div>
-        <div class="hero-img">
-            <img src="https://drive.google.com/thumbnail?id=13bP4qbyknXaE4l_BaAWOZo0b9DxR4D9I&sz=w1000" alt="Xander Profile">
-        </div>
-    </section>
+    <div id="vue-app">
 
-    <section id="about" class="glass-section hidden">
-        <h2 class="section-title">What I Do</h2>
-        <div class="cards-grid">
-            <div class="glass-card">
-                <i class="fas fa-shield-alt card-icon"></i>
-                <h3>Cyber Security</h3>
-                <p>Protecting digital assets and analyzing forensic data.</p>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h3>Hello, I'm</h3>
+                <h1>Xander Revelar</h1>
+                <h2 class="typing-text">I am a <span class="typewriter"></span></h2>
+                <p>Specializing in Cyber Security & Forensics. Building secure systems for a safer web.</p>
+                
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/xander-revelar-40141a326/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/justhrio" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/xander.revelar.8/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/xndrrrrrr/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                
+                <a href="mailto:sabibomb@gmail.com" class="btn-primary">Email Me</a>
             </div>
-            <div class="glass-card">
-                <i class="fas fa-code card-icon"></i>
-                <h3>Web Development</h3>
-                <p>Building responsive and interactive websites.</p>
+            <div class="hero-img">
+                <img src="https://drive.google.com/thumbnail?id=13bP4qbyknXaE4l_BaAWOZo0b9DxR4D9I&sz=w1000" alt="Xander Profile">
             </div>
-            <div class="glass-card">
-                <i class="fas fa-guitar card-icon"></i>
-                <h3>Music & Arts</h3>
-                <p>Playing guitar and covering songs for the soul.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="portfolio" class="hidden">
-        <h2 class="section-title">My Work</h2>
-        
-        <div class="gallery-grid">
-            <div class="gallery-item">
-                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1000&auto=format&fit=crop" alt="Cyber Security Project">
-                <div class="overlay">
-                    <h3>Network Defense</h3>
-                    <p>Vulnerability Assessment & Forensics</p>
+        <section id="about" class="glass-section hidden">
+            <h2 class="section-title">What I Do</h2>
+            <div class="cards-grid">
+                <div class="glass-card" v-for="service in services" :key="service.title">
+                    <i :class="service.icon + ' card-icon'"></i>
+                    <h3>{{ service.title }}</h3>
+                    <p>{{ service.desc }}</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer id="contact">
+        <section id="skills" class="hidden">
+            <h2 class="section-title">Tech Stack</h2>
+            
+            <div class="skills-container">
+                <div class="skill-category" v-for="(category, name) in skills" :key="name">
+                    <h3 class="category-title">{{ name }}</h3>
+                    <div class="skill-grid">
+                        <div class="skill-item" v-for="tech in category" :key="tech.name">
+                            <i :class="tech.icon"></i>
+                            <span class="tooltip">{{ tech.name }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="hidden">
+            <h2 class="section-title">My Work</h2>
+
+            <div class="filter-buttons">
+                <button 
+                    v-for="cat in categories" 
+                    :key="cat"
+                    :class="{ active: currentCategory === cat }"
+                    @click="currentCategory = cat">
+                    {{ cat }}
+                </button>
+            </div>
+            
+            <transition-group name="fade" tag="div" class="gallery-grid">
+                <div class="gallery-item" v-for="project in filteredProjects" :key="project.title">
+                    <img :src="project.image" :alt="project.title">
+                    <div class="overlay">
+                        <h3>{{ project.title }}</h3>
+                        <p>{{ project.tech }}</p>
+                    </div>
+                </div>
+            </transition-group>
+        </section>
+
+    </div> <footer id="contact">
         <h2>Let's Connect</h2>
         <a href="mailto:sabibomb@gmail.com" class="email-link">sabibomb@gmail.com</a>
-        <div class="social-icons" style="justify-content: center; margin-top: 20px;">
-             <a href="#"><i class="fab fa-linkedin-in"></i></a>
-             <a href="#"><i class="fab fa-github"></i></a>
+        <div class="social-icons footer-socials">
+             <a href="https://www.linkedin.com/in/xander-revelar-40141a326/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+             <a href="https://github.com/justhrio" target="_blank"><i class="fab fa-github"></i></a>
         </div>
-        <p class="copyright">&copy; 2026 Xander Revelar</p>
+        <p class="copyright">&copy; {{ new Date().getFullYear() }} Xander Revelar</p>
     </footer>
 
     <script src="javascript/script.js"></script>
+    <script src="javascript/vue-app.js"></script>
 
 </body>
 </html>
