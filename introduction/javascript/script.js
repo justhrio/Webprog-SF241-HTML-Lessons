@@ -79,36 +79,53 @@ createApp({
         }
     },
     methods: {
-        // --- TYPING LOGIC (FIXED) ---
+        // --- TYPING LOGIC ---
         typeWriter() {
             const currentWord = this.words[this.wordIndex];
             
             if (this.isDeleting) {
-                // Delete char
                 this.displayText = currentWord.substring(0, this.displayText.length - 1);
                 this.typingSpeed = 50;
             } else {
-                // Add char
                 this.displayText = currentWord.substring(0, this.displayText.length + 1);
                 this.typingSpeed = 100;
             }
 
             if (!this.isDeleting && this.displayText === currentWord) {
-                // Finished typing word, pause then delete
                 this.isDeleting = true;
                 this.typingSpeed = 2000;
             } else if (this.isDeleting && this.displayText === '') {
-                // Finished deleting, move to next word
                 this.isDeleting = false;
                 this.wordIndex = (this.wordIndex + 1) % this.words.length;
                 this.typingSpeed = 500;
             }
 
-            // --- THE FIX IS HERE: Use arrow function () => ---
             setTimeout(() => this.typeWriter(), this.typingSpeed);
+        },
+
+        // --- SCROLL ANIMATION LOGIC (ADDED HERE) ---
+        observeScroll() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("show");
+                    }
+                });
+            });
+
+            // Find all elements with the 'hidden' class
+            const hiddenElements = document.querySelectorAll(".hidden");
+            hiddenElements.forEach((el) => observer.observe(el));
         }
     },
     mounted() {
+        // 1. Start Typing
         this.typeWriter();
+        
+        // 2. Start Scroll Observer (This makes the bottom content appear!)
+        // We use setTimeout to ensure Vue has finished rendering the HTML first
+        setTimeout(() => {
+            this.observeScroll();
+        }, 100); 
     }
 }).mount('#vue-app');
